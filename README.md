@@ -69,3 +69,13 @@ Start time: 4pm
 Finish time: 9pm
 
 Actual time needed to complete: 5 hours. 
+
+Name of feature: Modal Feature
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 1: 12pm
+
+Finish time: 4: 08pm
+
+Actual time needed to complete: 3 hours. 

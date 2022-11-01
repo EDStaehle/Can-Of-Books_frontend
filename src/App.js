@@ -66,7 +66,7 @@ await axios.delete(url);
 let updateBooks = this.states.books.filter(book => book._id !== id);
 
   this.setState({
-books: updatedBooks
+books: updateBooks
   });
   }
   catch(error){

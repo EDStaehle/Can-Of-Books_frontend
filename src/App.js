@@ -69,7 +69,7 @@ class App extends React.Component {
 
       await axios.delete(url);
 
-      let updateBooks = this.states.books.filter(book => book._id !== id);
+      let updateBooks = this.state.books.filter(book => book._id !== id);
 
       this.setState({
         books: updateBooks
@@ -109,7 +109,8 @@ class App extends React.Component {
           <Routes>
             <Route
               exact path="/"
-              element={<BestBooks
+              element={<BestBooks 
+                handleDelete={this.deleteBooks}
                 books={this.state.books}
               />}
             >

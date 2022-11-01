@@ -22,7 +22,7 @@ class BestBooks extends React.Component {
           <p>{books.title}</p>
           <p>{books.description}</p>
           <p>{books.awards}</p>
-          <Button variant="outline-info" onClick={()=> {this.props.handleDelete(books._id)}}>{books._id}</Button>
+          <Button variant="outline-info" onClick={()=> {this.props.handleDelete(books._id)}}>Delete</Button>
         </Carousel.Caption>
       </Carousel.Item>
   

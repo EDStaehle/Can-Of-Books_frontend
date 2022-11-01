@@ -25,7 +25,7 @@ class App extends React.Component {
       let bookData = await axios.get(`${process.env.REACT_APP_SERVER}/books`)
       this.setState({
         books: bookData.data,
-    
+
       }, () => console.log(this.state.books));
 
     } catch (error) {
@@ -34,9 +34,56 @@ class App extends React.Component {
     }
   }
 
+  handleBookSubmit = (e) => {
+    e.preventDefault();
+    let newBook = {
+      title: e.target.title.value,
+      description: e.target.color.value,
+      awards: e.target.location.value
+
+    }
+    console.log(newBook);
+  }
+
+  postBooks = async (newBookObj) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books`
+      let createdBook = await axios.post(url, newBookObj);
+
+      this.setState({
+        books: [...this.state.books, createdBook.data]
+      })
+    }
+    catch(error){
+    }
+  }
+deleteBooks = async (id) => {
+  try {
+  let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
+
+await axios.delete(url);
+
+let updateBooks = this.states.books.filter(book => book._id !== id);
+
+  this.setState({
+books: updateBooks
+  });
+  }
+  catch(error){
+  console.log(error.message);
+  }
+}
+
+
+
+
+
+
+
+
   componentDidMount() {
-  this.getBooks();
-  console.log(this.state.books);
+    this.getBooks();
+    console.log(this.state.books);
   }
 
   render() {
@@ -52,7 +99,7 @@ class App extends React.Component {
               />}
             >
             </Route>
-             <Route
+            <Route
               exact path="/about"
               element={<About
                 books={this.state.books}

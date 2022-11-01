@@ -31,3 +31,41 @@ contributing?-- have a discussion about our feelings
 What will your team do if one person is taking over the project and not letting the other member contribute?-- Have a discussion about our feelings
 
 How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?-- Work together as a team not two individuals.
+
+## Project Name Can Of Books
+
+**Author**: Elias Staehle. Zoe Gonzalez
+
+**Version**: 1.0.0
+
+## Overview
+
+so far this is a site with 3 books on it
+
+## Getting Started
+
+created front and backend and connected servers and databases.
+
+## Architecture
+
+using JS react node.
+
+## Change Log
+
+Added front end and backend
+
+## Estimates
+
+took about 4 hours
+
+## Credit and Collaborations
+
+Name of feature: create app
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 4pm
+
+Finish time: 9pm
+
+Actual time needed to complete: 5 hours. 

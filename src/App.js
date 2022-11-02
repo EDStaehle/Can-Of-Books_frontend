@@ -83,7 +83,7 @@ class App extends React.Component {
    updateBooks = async (bookToUpdate) => {
 
     try{
-      let url = `${process.env.REACT_APP_SERVER}/books${bookToUpdate._id}`
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookToUpdate._id}`
       let updatedBook = await axios.put(url, bookToUpdate);
 
       let updatedBookArray = this.state.books.map(existingBook => {
@@ -133,6 +133,7 @@ class App extends React.Component {
             <Route
               exact path="/"
               element={<BestBooks 
+                updateBook={this.updateBooks}
                 handleDelete={this.deleteBooks}
                 books={this.state.books}
               />}

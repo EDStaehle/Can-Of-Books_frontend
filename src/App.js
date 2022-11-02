@@ -69,7 +69,7 @@ class App extends React.Component {
 
       await axios.delete(url);
 
-      let updateBooks = this.states.books.filter(book => book._id !== id);
+      let updateBooks = this.state.books.filter(book => book._id !== id);
 
       this.setState({
         books: updateBooks
@@ -79,6 +79,29 @@ class App extends React.Component {
       console.log(error.message);
     }
   }
+
+   updateBooks = async (bookToUpdate) => {
+
+    try{
+      let url = `${process.env.REACT_APP_SERVER}/books${bookToUpdate._id}`
+      let updatedBook = await axios.put(url, bookToUpdate);
+
+      let updatedBookArray = this.state.books.map(existingBook => {
+        return existingBook._id === bookToUpdate._id 
+        ? updatedBook.data
+        : existingBook
+      });
+      this.setState({
+        books: updatedBookArray
+      });
+
+
+    }catch (error) {
+      console.log(error.message);
+    }
+   }
+
+
   closeModal = () => {
     this.setState({
       showModal: false,
@@ -109,7 +132,8 @@ class App extends React.Component {
           <Routes>
             <Route
               exact path="/"
-              element={<BestBooks
+              element={<BestBooks 
+                handleDelete={this.deleteBooks}
                 books={this.state.books}
               />}
             >

@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -21,6 +22,7 @@ class BestBooks extends React.Component {
           <p>{books.title}</p>
           <p>{books.description}</p>
           <p>{books.awards}</p>
+          <Button variant="outline-info" onClick={()=> {this.props.handleDelete(books._id)}}>Delete</Button>
         </Carousel.Caption>
       </Carousel.Item>
   
@@ -34,6 +36,7 @@ class BestBooks extends React.Component {
     )
   }
 }
+
 
 
 export default BestBooks;
